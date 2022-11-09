@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'net.serenity-bdd:serenity-core:3.3.7'
+    implementation 'net.serenity-bdd:serenity-cucumber:3.3.7'
+    implementation 'net.serenity-bdd:serenity-screenplay:3.3.7'
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:3.3.7'
+    implementation 'org.seleniumhq.selenium:selenium-server:3.141.59'
+}
