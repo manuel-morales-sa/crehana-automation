@@ -1,8 +1,10 @@
 package com.crehana.steps;
 
 import com.crehana.tasks.UserLoginTask;
+import com.crehana.ui.HomePage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
@@ -13,7 +15,9 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class LoginUserSteps {
 
     @Managed(driver = "chrome")
-    WebDriver driver;
+    private WebDriver driver;
+
+    private HomePage homePage = new HomePage();
 
     @Before
     public void setThestage(){
@@ -22,7 +26,8 @@ public class LoginUserSteps {
     }
     @Given("user in the home page")
     public void userInTheHomePage() {
-        theActorInTheSpotlight().wasAbleTo(Open.url("https://www.crehana.com/co/"));
+        theActorInTheSpotlight().can(BrowseTheWeb.with(driver));
+        theActorInTheSpotlight().wasAbleTo(Open.browserOn(homePage));
 
     }
     @When("user enter the email and password")

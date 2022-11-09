@@ -3,7 +3,7 @@ package com.crehana.ui;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class Entrar {
+public class EntrarPage {
 
     public static final Target EMAIL = Target.the("email").
             located(By.id("username"));

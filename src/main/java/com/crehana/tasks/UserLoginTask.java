@@ -1,7 +1,7 @@
 package com.crehana.tasks;
 
-import com.crehana.ui.Entrar;
-import com.crehana.ui.Home;
+import com.crehana.ui.EntrarPage;
+import com.crehana.ui.HomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -13,10 +13,10 @@ public class UserLoginTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(Home.LOGIN),
-                SendKeys.of("b2b@mailinator.com").into(Entrar.EMAIL),
-                SendKeys.of("1234567890").into(Entrar.PASSWORD),
-                Click.on(Entrar.LOGIN_BUTTON)
+                Click.on(HomePage.LOGIN),
+                SendKeys.of("b2b@mailinator.com").into(EntrarPage.EMAIL),
+                SendKeys.of("1234567890").into(EntrarPage.PASSWORD),
+                Click.on(EntrarPage.LOGIN_BUTTON)
         );
     }
     public static UserLoginTask makeinformation(){
