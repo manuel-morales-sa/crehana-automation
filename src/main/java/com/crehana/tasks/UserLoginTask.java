@@ -1,25 +1,34 @@
 package com.crehana.tasks;
 
-import com.crehana.ui.EntrarPage;
-import com.crehana.ui.HomePage;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.SendKeys;
+import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
+import static com.crehana.ui.EntrarPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class UserLoginTask implements Task {
+
+    private String user;
+    private String password;
+    public UserLoginTask(String user, String password){
+        this.user = user;
+        this.password = password;
+    }
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(HomePage.LOGIN),
-                SendKeys.of("b2b@mailinator.com").into(EntrarPage.EMAIL),
-                SendKeys.of("1234567890").into(EntrarPage.PASSWORD),
-                Click.on(EntrarPage.LOGIN_BUTTON)
+                Enter.theValue(user).into(EMAIL),
+                //SelectFromOptions.byVisibleText(password).from(),
+                Enter.theValue(password).into(PASSWORD),
+                Click.on(LOGIN_BUTTON)
         );
     }
-    public static UserLoginTask makeinformation(){
-        return instrumented(UserLoginTask.class);
+
+    public static UserLoginTask datosLogin(String user, String password) {
+        return instrumented(UserLoginTask.class, user, password);
     }
 }
