@@ -11,7 +11,12 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+
+import static com.crehana.ui.HomeUserPage.ASSERT_USER_LOGIN;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
+import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
 public class LoginUserSteps {
 
@@ -40,6 +45,7 @@ public class LoginUserSteps {
     }
     @Then("user sees the content")
     public void userSeesTheContent() {
+        theActorInTheSpotlight().should(seeThat(the(ASSERT_USER_LOGIN), isPresent()));
 
     }
 }
