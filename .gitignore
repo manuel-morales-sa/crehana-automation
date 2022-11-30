@@ -15,3 +15,16 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 /build/reports/
+.gradle/7.4/executionHistory/executionHistory.bin
+.gradle/7.4/executionHistory/executionHistory.lock
+.gradle/7.4/fileHashes/fileHashes.bin
+.gradle/7.4/fileHashes/fileHashes.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+/build/reports/tests/test/classes/I#20as#20user#20of#20the#20crehana#20platform.html
+/build/reports/tests/test/classes/com.crehana.runners.LoginUserRunners.html
+/build/reports/tests/test/index.html
+/build/reports/tests/test/packages/com.crehana.runners.html
+/build/reports/tests/test/packages/default-package.html
+/build/test-results/test/TEST-I#20as#20user#20of#20the#20crehana#20platform.xml
+/build/test-results/test/binary/output.bin
+/build/test-results/test/binary/results.bin
