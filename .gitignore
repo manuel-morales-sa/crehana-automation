@@ -2,6 +2,8 @@
 .png
 .bin
 .lock
+.results.bin
+.output.bin
 /build
 /target
 .gradle
@@ -12,3 +14,4 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+/build/reports/
